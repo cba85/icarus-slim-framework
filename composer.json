@@ -40,10 +40,10 @@
 },
   "autoload": {
     "psr-4": {
-      "Icarus/\\": "src/Icarus/"
+      "Icarus\\": "src"
     },
     "files" : [
-      "src/Icarus/helpers.php"
+      "src/helpers.php"
   ]
   }
 }
