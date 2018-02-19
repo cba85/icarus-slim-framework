@@ -1,0 +1,36 @@
+{
+  "name": "cba85/icarus-slim-framework",
+  "type": "library",
+  "description": "The Icarus Slim framework.",
+  "keywords": [
+    "Icarus Slim, framework"
+  ],
+  "homepage": "https://github.com/cba85/icarus-slim-framework",
+  "support": {
+    "issues": "https://github.com/cba85/icarus-slim-framework/issues",
+    "source": "https://github.com/cba85/icarus-slim-framework"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Clément Barbaza",
+      "email": "hello@clementbarbaza.com",
+      "homepage": "https://clementbarbaza.com/",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "~7.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit" : "4.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "src/Icarus/\\": "src"
+    },
+    "files" : [
+      "src/Icarus/helpers.php"
+  ]
+  }
+}
