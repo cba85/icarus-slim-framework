@@ -1,6 +1,6 @@
 <?php
 
-namespace Icarus\Controllers;
+namespace Icarus;
 
 use Psr\Container\ContainerInterface;
 use Slim\Http\Response;
