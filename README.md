@@ -1,30 +1,15 @@
-# Icarus Slim framework
+# Icarus Slim Framework
 
-The Icarus Slim framework for [Icarus Slim](https://github.com/cba85/icarus-slim).
+Icarus Slim is a framework based on [Slim](https://www.slimframework.com), the PHP micro-framework.
 
-## Installation
-
-You can install the package via composer:
-
-``` bash
-composer require cba85/icarus-slim-framework
-```
-
-## Usage
-
-``` php
-$icarus = new Icarus\Slim();
-echo $icarus->echoPhrase('Hello, World!');
-```
-
-## Testing
+## Tests
 
 No test yet.
 
-## Credits
+## Authors
 
-- [Clément Barbaza](https://github.com/cba85)
+- [Clément Barbaza](https://www.github.com/cba85)
 
 ## License
 
-Please see [License File](LICENSE) for more information.
+This project is licensed under the MIT License - see the [LICENSE](../LICENSE) file for details.
