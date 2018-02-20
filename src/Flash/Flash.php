@@ -6,12 +6,13 @@ namespace Icarus;
  */
 class Flash {
 
-     /**
-     * Flash messages
+    /**
+     * Load flash messages
      *
      * @return void
      */
-    public function flash() {
+    public function invoke() {
         return new \Slim\Flash\Messages();
     }
+
 }
