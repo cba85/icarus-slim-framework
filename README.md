@@ -2,6 +2,10 @@
 
 Icarus Slim is a framework based on [Slim](https://www.slimframework.com), the PHP micro-framework.
 
+## Documentation
+
+The documentation of the framework is [here](https://github.com/cba85/icarus-slim-docs).
+
 ## Tests
 
 No test yet.
