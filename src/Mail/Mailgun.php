@@ -36,8 +36,8 @@ class MailgunHelper extends Mail
      * Constructor
      */
     public function __construct() {
-        $this->key = env('MAILGUN_PRIVATE_KEY');
-        $this->domain = env('MAILGUN_DOMAIN');
+        $this->key = getenv('MAILGUN_PRIVATE_KEY');
+        $this->domain = getenv('MAILGUN_DOMAIN');
         $this->mg = Mailgun::create($this->key);
     }
 
