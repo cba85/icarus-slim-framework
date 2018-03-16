@@ -49,15 +49,11 @@ class Mail
     /**
      * Send email
      *
-     * @param string $from
-     * @param string $to
-     * @param string $cc
-     * @param string $subject
-     * @param string $text
+     * @param string $params
      * @return void
      */
-    public function send($from, $to, $cc, $subject, $text) {
-        $this->mail->send($from, $to, $cc, $subject, $text);
+    public function send($params) {
+        $this->mail->send($params);
     }
 
 }
