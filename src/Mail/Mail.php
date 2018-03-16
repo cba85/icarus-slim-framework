@@ -2,8 +2,7 @@
 
 namespace Icarus;
 
-use Psr\Container\ContainerInterface;
-use Icarus\MailgunHelper as MailgunHelper;
+use Mailgun\Mailgun;
 
 /**
  * Mail
@@ -19,45 +18,39 @@ class Mail
     private $mail;
 
     /**
+     * Private API key
+     *
+     * @var string
+     */
+    private $key;
+
+    /**
+     * Domain
+     *
+     * @var string
+     */
+    private $domain;
+
+    /**
      * Constructor
      *
      * @param string $driver
      */
-    public function __construct($driver) {
-        $mail = $this->initMailDriver($driver);
+    public function __construct() {
+        $this->key = getenv('MAILGUN_PRIVATE_KEY');
+        $this->domain = getenv('MAILGUN_DOMAIN');
+        $this->mg = Mailgun::create($this->key);
     }
 
     /**
-     * Init mail driver
+     * Send an email using Mailgun
      *
-     * @param string $driver
+     * @param array $from
      * @return void
      */
-    public function initMailDriver($driver) {
-        switch($driver) {
-            case 'mailgun':
-                $mail = function () {
-                    return new MailgunHelper;
-                };
-                break;
-
-            default:
-                $mail = function () {
-                    return new MailgunHelper;
-                };
-                break;
-        }
-        return $mail;
-    }
-
-    /**
-     * Send email
-     *
-     * @param string $params
-     * @return void
-     */
-    public function send($params) {
-        return $this->mail->send($params);
+    public function send($params)
+    {
+        return $this->mg->messages()->send($this->domain, $params);
     }
 
 }
