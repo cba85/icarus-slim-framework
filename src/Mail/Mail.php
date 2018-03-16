@@ -36,11 +36,15 @@ class Mail
     public function initMailDriver($driver) {
         switch($driver) {
             case 'mailgun':
-                $mail = new MailgunHelper;
+                $mail = function () {
+                    return new MailgunHelper;
+                };
                 break;
 
             default:
-                $mail = new MailgunHelper;
+                $mail = function () {
+                    return new MailgunHelper;
+                };
                 break;
         }
         return $mail;
@@ -53,7 +57,7 @@ class Mail
      * @return void
      */
     public function send($params) {
-        $this->mail->send($params);
+        return $this->mail->send($params);
     }
 
 }

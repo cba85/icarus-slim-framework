@@ -32,6 +32,10 @@ class MailgunHelper extends Mail
      */
     private $domain;
 
+    public function invoke() {
+        return new \Icarus\MailgunHelper;
+    }
+
     /**
      * Constructor
      */
