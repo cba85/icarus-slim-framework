@@ -25,7 +25,9 @@ class HomepageTest extends BaseTestCase
         $this->assertContains('Method not allowed', (string)$response->getBody());
     }
 
+    /*
     public function testLog() {
         $this->container->logger->debug($text);
     }
+    */
 }
