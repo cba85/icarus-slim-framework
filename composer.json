@@ -33,7 +33,8 @@
     "hassankhan/config": "^0.11.2",
     "kanellov/slim-twig-flash": "^0.2.0",
     "aura/sql": "^2.5",
-    "akrabat/ip-address-middleware": "^1.0"
+    "akrabat/ip-address-middleware": "^1.0",
+    "boronczyk/localization-middleware": "^1.3"
   },
   "require-dev": {
     "phpunit/phpunit": "^7"
