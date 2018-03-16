@@ -40,15 +40,27 @@ class Controller
     }
 
     /**
-     * Render a PHP/Twig view
+     * Render a Twig view
      * @param  Response $response
      * @param  string $filename
      * @param  array $params
      * @return mixed
      */
-    public function view($response, $filename, $params = [])
+    public function renderView($response, $filename, $params = [])
     {
         return $this->container->view->render($response, $filename, $params);
+    }
+
+    /**
+     * Fetch a Twig view
+     *
+     * @param string $filename
+     * @param array $params
+     * @return void
+     */
+    public function fetchView($filename, $params = [])
+    {
+        return $this->container->view->fetch($filename, $params);
     }
 
     /**
