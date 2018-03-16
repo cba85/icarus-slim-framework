@@ -56,8 +56,8 @@ class Mail
      * @param string $text
      * @return void
      */
-    public function sendMail($from, $to, $cc, $subject, $text) {
-        $this->mail->sendmail($from, $to, $cc, $subject, $text);
+    public function send($from, $to, $cc, $subject, $text) {
+        $this->mail->send($from, $to, $cc, $subject, $text);
     }
 
 }

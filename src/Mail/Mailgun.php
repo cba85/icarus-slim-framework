@@ -44,21 +44,17 @@ class MailgunHelper extends Mail
     /**
      * Send an email using Mailgun
      *
-     * @param string $from
-     * @param string $to
-     * @param string $cc
-     * @param string $subject
-     * @param string $text
+     * @param array $from
      * @return void
      */
-    public function sendMail($from, $to, $cc, $subject, $text)
+    public function send($params)
     {
         return $this->mg->messages()->send($this->domain, [
-            'from'    => $from,
-            'to'      => $to,
-            'cc'      => $cc,
-            'subject' => $subject,
-            'text'    => $text
+            'from'    => $params['from'],
+            'to'      => $params['to'],
+            'cc'      => $params['cc'],
+            'subject' => $params['subject'],
+            'text'    => $params['text']
             ]);
     }
 }
