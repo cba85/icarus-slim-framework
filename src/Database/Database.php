@@ -1,5 +1,5 @@
 <?php
-namespace App\Classes;
+namespace Icarus;
 
 use PDO;
 use PDOException;
