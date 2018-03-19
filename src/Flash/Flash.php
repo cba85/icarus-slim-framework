@@ -11,7 +11,8 @@ class Flash {
      *
      * @return void
      */
-    public function invoke() {
+    public function invoke()
+    {
         return new \Slim\Flash\Messages();
     }
 

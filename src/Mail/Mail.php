@@ -36,7 +36,8 @@ class Mail
      *
      * @param string $driver
      */
-    public function __construct() {
+    public function __construct()
+    {
         $this->key = getenv('MAILGUN_PRIVATE_KEY');
         $this->domain = getenv('MAILGUN_DOMAIN');
         $this->mg = Mailgun::create($this->key);

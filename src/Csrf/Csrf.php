@@ -11,7 +11,8 @@ class Csrf {
      *
      * @return void
      */
-    public function invoke() {
+    public function invoke()
+    {
         return new \Slim\Csrf\Guard;
     }
 
