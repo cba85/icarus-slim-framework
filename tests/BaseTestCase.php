@@ -8,7 +8,6 @@ use Slim\Http\Environment;
 
 class BaseTestCase extends \PHPUnit_Framework_TestCase
 {
-
     /**
      * Create  a test environment
      *
@@ -62,9 +61,7 @@ class BaseTestCase extends \PHPUnit_Framework_TestCase
         $container = $app->getContainer();
         require __DIR__ . '/src/dependencies.php';
         // Register middleware
-        if ($withMiddleware) {
-            require __DIR__ . '/../src/Middlewares/ExampleMiddleware.php';
-        }
+        require __DIR__ . '/src/middlewares.php';
         // Register routes
         require __DIR__ . '/src/routes.php';
         // Return the app
