@@ -8,7 +8,7 @@ class HomepageTest extends BaseTestCase
     /**
      * Test the index route
      */
-    public function testGetHomepageWithoutName()
+    public function testGetHomepage()
     {
         $response = $this->runApp('GET', '/');
         $this->assertEquals(200, $response->getStatusCode());
@@ -25,9 +25,4 @@ class HomepageTest extends BaseTestCase
         $this->assertContains('Method not allowed', (string)$response->getBody());
     }
 
-    /*
-    public function testLog() {
-        $this->container->logger->debug($text);
-    }
-    */
 }

@@ -7,7 +7,7 @@ use Slim\Http\Request;
 /**
  * Controller for web pages
  */
-class ExampleController
+class Controller
 {
     /**
      * Homepage
@@ -20,9 +20,8 @@ class ExampleController
         return true;
         // Test database
         //$posts = $this->db->fetchAll('SELECT * FROM posts');
-        // Test logger
-        //$this->log('home');
         // Test view
         //return $this->view($response, 'index.html');
     }
+
 }
