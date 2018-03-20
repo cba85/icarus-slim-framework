@@ -32,6 +32,11 @@ class Auth {
         $this->session = new Session;
     }
 
+    /**
+     * Invoke
+     *
+     * @return void
+     */
     public function invoke() {
         return new Icarus\Auth;
     }
