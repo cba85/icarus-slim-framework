@@ -142,7 +142,7 @@ class Controller
      *
      * @return array
      */
-    public function getCsrf()
+    public function csrf()
     {
         $csrf['nameKey'] = $this->csrf->getTokenNameKey();
         $csrf['valueKey'] = $this->csrf->getTokenValueKey();
