@@ -55,7 +55,8 @@ class Cookie
      * @param int $default
      * @return void
      */
-    public function get($key, $default = null) {
+    public function get($key, $default = null)
+    {
         if ($this->exists($key)) {
             return $_COOKIE[$key];
         }
@@ -68,7 +69,8 @@ class Cookie
      * @param [type] $key
      * @return void
      */
-    public function exists($key) {
+    public function exists($key)
+    {
         return isset($_COOKIE[$key]) && !empty($_COOKIE[$key]);
     }
 
@@ -78,7 +80,8 @@ class Cookie
      * @param int $key
      * @return void
      */
-    public function clear($key) {
+    public function clear($key)
+    {
         $this->set($key, null, -2628000, $this->path, $this->domain);
     }
 
@@ -89,7 +92,8 @@ class Cookie
      * @param string $value
      * @return void
      */
-    public function forever($key, $value) {
+    public function forever($key, $value)
+    {
         $this->set($key, null, 2628000);
     }
 
