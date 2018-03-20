@@ -1,6 +1,8 @@
 <?php
 namespace Icarus;
 
+use Icarus\Session;
+
 /**
  * Authentification
  */
@@ -8,9 +10,16 @@ class Auth {
 
      /**
      * Database
-     * @param $object $db
+     * @param object $db
      */
     private $db;
+
+    /**
+     * Session
+     *
+     * @var object $session
+     */
+    private $session;
 
     /**
      * Constructor
@@ -20,6 +29,7 @@ class Auth {
     public function __construct($db)
     {
         $this->db = $db;
+        $this->session = new Session;
     }
 
     public function invoke() {
@@ -33,7 +43,8 @@ class Auth {
      */
     public function check()
     {
-        return isset($_SESSION['user']);
+        return $this->session->exists('user');
+        //return isset($_SESSION['user']);
     }
 
     /**
@@ -44,7 +55,8 @@ class Auth {
     public function user()
     {
         $query = 'SELECT * FROM users WHERE id = :id';
-        $params = ['id' => $_SESSION['user']];
+        $params = ['id' => $this->session->get('user')];
+        //$params = ['id' => $_SESSION['user']];
         return $this->db->exec($query, $params);
     }
 
@@ -66,7 +78,8 @@ class Auth {
         }
 
         if (password_verify($password, $user->password)) {
-            $_SESSION['user'] = $user->id;
+            $this->session->set('user', $user->id);
+            //$_SESSION['user'] = $user->id;
             return true;
         }
         return false;
@@ -79,7 +92,8 @@ class Auth {
      */
     public function logout()
     {
-        unset($_SESSION['user']);
+        $this->session->clear('user');
+        //unset($_SESSION['user']);
     }
 
 }
