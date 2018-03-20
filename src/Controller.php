@@ -139,13 +139,13 @@ class Controller
 
     /**
      * Return CSRF values
-     *
+     * @param  Request $request
      * @return array
      */
-    public function csrf()
+    public function csrf($request)
     {
-        $csrf['nameKey'] = $this->csrf->getTokenNameKey();
-        $csrf['valueKey'] = $this->csrf->getTokenValueKey();
+        $csrf['nameKey'] = $this->container->csrf->getTokenNameKey();
+        $csrf['valueKey'] = $this->container->csrf->getTokenValueKey();
         $csrf['name'] = $request->getAttribute($csrf['nameKey']);
         $csrf['value'] = $request->getAttribute($csrf['valueKey']);
         return $csrf;
